@@ -3,10 +3,10 @@
 -keep class io.flutter.plugins.** { *; }
 
 # === App package ===
--keep class com.example.fin_calc.** { *; }
+-keep class com.flydsoft.fin_calc.** { *; }
 
 # === JNI / native used classes ===
--keep class com.example.fin_calc.** { *; }
+-keep class com.flydsoft.fin_calc.** { *; }
 
 # === Retrofit, Gson ===
 -keepattributes Signature

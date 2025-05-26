@@ -1,4 +1,4 @@
-package com.example.fin_calc
+package com.flydsoft.fin_calc
 
 import io.flutter.embedding.android.FlutterActivity
 

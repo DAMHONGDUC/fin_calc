@@ -7,7 +7,7 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-val appId = "com.example.fin_calc"  
+val appId = "com.flydsoft.fin_calc"
 
 val localProperties = Properties().apply {
     val localPropertiesFile = rootProject.file("local.properties")
