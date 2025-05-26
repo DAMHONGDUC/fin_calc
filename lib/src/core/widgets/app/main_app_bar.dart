@@ -6,22 +6,25 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({
     super.key,
     this.actions,
-    required this.title,
+    this.title,
     this.showBackButton = true,
     this.onShare,
     this.centerTitle = true,
+    this.titleWidget,
   });
 
   final List<Widget>? actions;
-  final String title;
+  final String? title;
   final bool showBackButton;
   final void Function()? onShare;
   final bool centerTitle;
+  final Widget? titleWidget;
 
   @override
   Widget build(BuildContext context) {
     return SdAppBar(
       title: title,
+      titleWidget: titleWidget,
       centerTitle: centerTitle,
       showBackButton: showBackButton,
       actions: [

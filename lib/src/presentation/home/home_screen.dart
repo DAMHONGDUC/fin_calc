@@ -1,5 +1,6 @@
 import 'package:fin_calc/src/core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:system_design_flutter/index.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,10 +23,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MainAppBar(
-        title: 'Finance Calculator',
+      appBar: MainAppBar(
+        titleWidget: GradientText(
+          'FINANCE CALCULATOR',
+          style: SdTextStyle.heading14(),
+          colors: [context.appTheme.primary, Colors.red, Colors.teal],
+        ),
         showBackButton: false,
-        actions: [_OpenSettingButton()],
+        actions: const [_OpenSettingButton()],
         centerTitle: false,
       ),
       backgroundColor: context.appTheme.bgPrimary,
