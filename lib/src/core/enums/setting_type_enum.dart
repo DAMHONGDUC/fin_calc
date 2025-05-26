@@ -1,0 +1,1 @@
+enum SettingTypeEnum { basic, themeMode }

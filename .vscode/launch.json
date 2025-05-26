@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ios-simulator",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "B3CB389F-E1D2-4B71-A505-88A44D522381"
+    },
+    {
+      "name": "android-emulator",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "emulator-5554"
+    },
+    {
+      "name": "android-real",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "d506b9d5"
+    }
+  ]
+}
