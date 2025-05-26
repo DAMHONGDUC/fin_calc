@@ -17,7 +17,8 @@ class CustomMaterialApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Change android Android Navigation Bar Color base on current brighness
-    Helper.changeAndroidNavigationBarColorWhenInit(
+    Helper.changeAndroidNavigationBarColor(
+      delayMs: 0,
       isDark: MediaQuery.of(context).platformBrightness == Brightness.dark,
     );
 
