@@ -7,11 +7,11 @@ fvm flutter pub run build_runner watch --delete-conflicting-outputs
 ```
 
 ## Git Submodules set up
+
 - rm the .gitmodules
-- run this:
-```
-git submodule add https://github.com/DAMHONGDUC/system_design_flutter lib/packages
-```
+- run this to add submodules: git submodule add https://github.com/DAMHONGDUC/system_design_flutter packages/system_design_flutter
+- if you want to rm the submodules: git rm -rf packages && rm -rf .git/modules/packages
+
 ## Splash screen
 
 figma: https://www.figma.com/design/hWmEJB0c0qBGVomuFCtnz7/Untitled?node-id=11-19&t=wndZjxlS4Rszf6lC-0
