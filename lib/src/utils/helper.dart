@@ -9,9 +9,9 @@ class Helper {
     await Future.delayed(Duration(seconds: seconds));
   }
 
-  static changeAndroidNavigationBarColor({
-    required bool isDark,
+  static changeAndroidNavigationBarColorWhenSwitchTheme({
     int delayMs = 270,
+    required bool isDark,
   }) {
     if (!Platform.isAndroid) {
       return;
@@ -23,11 +23,26 @@ class Helper {
           () => SystemChrome.setSystemUIOverlayStyle(
             SystemUiOverlayStyle(
               systemNavigationBarColor:
-                  isDark ? AppColors.primaryDark : AppColors.primaryLight,
+                  isDark ? AppColors.primaryLight : AppColors.primaryDark,
               systemNavigationBarIconBrightness:
-                  isDark ? Brightness.dark : Brightness.light,
+                  isDark ? Brightness.light : Brightness.dark,
             ),
           ),
+    );
+  }
+
+  static changeAndroidNavigationBarColorWhenInit({required bool isDark}) {
+    if (!Platform.isAndroid) {
+      return;
+    }
+
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        systemNavigationBarColor:
+            isDark ? AppColors.primaryDark : AppColors.primaryLight,
+        systemNavigationBarIconBrightness:
+            isDark ? Brightness.dark : Brightness.light,
+      ),
     );
   }
 }
