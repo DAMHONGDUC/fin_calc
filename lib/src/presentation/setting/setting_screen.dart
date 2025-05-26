@@ -82,8 +82,9 @@ class SettingScreen extends StatelessWidget {
           data: AdaptiveThemeMode.values,
           itemLabelBuilder: _getThemeMode,
           onSelected: (selected) {
-            Helper.changeAndroidNavigationBarColorWhenSwitchTheme(
-              isDark: selected == Brightness.dark,
+            Helper.changeAndroidNavigationBarColor(
+              nextThemeMode: selected,
+              systemBrightness: MediaQuery.of(context).platformBrightness,
             );
             AdaptiveTheme.of(context).setThemeMode(selected);
           },

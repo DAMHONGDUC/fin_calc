@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:fin_calc/src/core/core.dart';
 import 'package:fin_calc/src/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,10 @@ class CustomMaterialApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Change android Android Navigation Bar Color base on current brighness
-    Helper.changeAndroidNavigationBarColorWhenInit(
-      isDark: MediaQuery.of(context).platformBrightness == Brightness.dark,
+    Helper.changeAndroidNavigationBarColor(
+      nextThemeMode: AdaptiveTheme.of(context).mode,
+      systemBrightness: MediaQuery.of(context).platformBrightness,
+      delayMs: 0,
     );
 
     return SdKeyboardDismisser(

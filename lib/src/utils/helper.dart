@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:fin_calc/src/core/core.dart';
 import 'package:flutter/services.dart';
 import 'package:system_design_flutter/index.dart';
@@ -9,12 +10,30 @@ class Helper {
     await Future.delayed(Duration(seconds: seconds));
   }
 
-  static changeAndroidNavigationBarColorWhenSwitchTheme({
+  static changeAndroidNavigationBarColor({
+    required AdaptiveThemeMode nextThemeMode,
+    required Brightness systemBrightness,
     int delayMs = 270,
-    required bool isDark,
   }) {
     if (!Platform.isAndroid) {
       return;
+    }
+
+    Color navigationBarColor = AppColors.primaryLight;
+    Brightness? brightness = Brightness.light;
+
+    if (nextThemeMode.isDark) {
+      navigationBarColor = AppColors.primaryDark;
+      brightness = Brightness.dark;
+    } else if (nextThemeMode.isLight) {
+      navigationBarColor = AppColors.primaryLight;
+      brightness = Brightness.light;
+    } else if (nextThemeMode.isSystem) {
+      navigationBarColor =
+          systemBrightness == Brightness.dark
+              ? AppColors.primaryDark
+              : AppColors.primaryLight;
+      brightness = systemBrightness;
     }
 
     SdHelper.delay(
@@ -22,27 +41,10 @@ class Helper {
       action:
           () => SystemChrome.setSystemUIOverlayStyle(
             SystemUiOverlayStyle(
-              systemNavigationBarColor:
-                  isDark ? AppColors.primaryLight : AppColors.primaryDark,
-              systemNavigationBarIconBrightness:
-                  isDark ? Brightness.light : Brightness.dark,
+              systemNavigationBarColor: navigationBarColor,
+              systemNavigationBarIconBrightness: brightness,
             ),
           ),
-    );
-  }
-
-  static changeAndroidNavigationBarColorWhenInit({required bool isDark}) {
-    if (!Platform.isAndroid) {
-      return;
-    }
-
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        systemNavigationBarColor:
-            isDark ? AppColors.primaryDark : AppColors.primaryLight,
-        systemNavigationBarIconBrightness:
-            isDark ? Brightness.dark : Brightness.light,
-      ),
     );
   }
 }
