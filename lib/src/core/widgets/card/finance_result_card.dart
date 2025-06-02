@@ -37,7 +37,7 @@ class FinanceResultCard extends StatelessWidget {
               for (int i = 0; i < items.length; i++) ...[
                 InfoRow(
                   label: items[i].label,
-                  content: SdFormatHelper.formatMoneyFromDouble(
+                  content: SdCurrencyFormatHelper.formatCurrencyFromDouble(
                     items[i].content,
                   ),
                 ),

@@ -60,7 +60,7 @@ class _SimpleInterestViewState extends State<_SimpleInterestView> {
         SimpleInterestModel(
           principalAmount:
               double.tryParse(
-                SdFormatHelper.getCleanAmountFromString(_principalTC.text),
+                SdCurrencyFormatHelper.cleanString(_principalTC.text),
               ) ??
               defaultSimpleInterest.principalAmount,
           rate: double.tryParse(_rateTC.text) ?? defaultSimpleInterest.rate,
@@ -183,7 +183,7 @@ class _InputArea extends StatelessWidget {
           title: 'Principal Amount',
           hintText: defaultSimpleInterest.principalAmount.toInt().toString(),
           controller: principalTC,
-          inputFormatters: [SdFormatHelper.amountFormatter()],
+          inputFormatters: [SdCurrencyFormatHelper.amountFormatter()],
         ),
         const SdVerticalSpacing(),
         AppNumberTextField(
@@ -208,7 +208,7 @@ class _InputArea extends StatelessWidget {
           title: 'Yearly Rate (%)',
           hintText: defaultSimpleInterest.rate.toInt().toString(),
           controller: rateTC,
-          inputFormatters: [SdFormatHelper.amountFormatter()],
+          inputFormatters: [SdCurrencyFormatHelper.amountFormatter()],
         ),
         const SdVerticalSpacing(),
       ],

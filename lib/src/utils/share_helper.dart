@@ -10,13 +10,13 @@ class ShareHelper {
     required double totalAmount,
   }) {
     final message = '''
-    💰 Principal Amount: ${SdFormatHelper.formatMoneyFromDouble(compoundInterest.principalAmount)}
-    ➕ Monthly Contribution: ${SdFormatHelper.formatMoneyFromDouble(compoundInterest.monthlyContribution)}
+    💰 Principal Amount: ${SdCurrencyFormatHelper.formatCurrencyFromDouble(compoundInterest.principalAmount)}
+    ➕ Monthly Contribution: ${SdCurrencyFormatHelper.formatCurrencyFromDouble(compoundInterest.monthlyContribution)}
     📈 Interest Rate: ${compoundInterest.rate}%
     ⏳ Time: ${compoundInterest.time} ${compoundInterest.timeUnit.name}
     🔁 Compound Frequency (per year): ${compoundInterest.frequency.value}
 
-    📦 Final Amount: ${SdFormatHelper.formatMoneyFromDouble(totalAmount)}
+    📦 Final Amount: ${SdCurrencyFormatHelper.formatCurrencyFromDouble(totalAmount)}
     📅 Calculation Date: ${DateFormat('dd/MM/yyyy').format(DateTime.now())}
     ''';
 
@@ -30,11 +30,11 @@ class ShareHelper {
     required double totalAmount,
   }) {
     final message = '''
-  💰 Principal Amount: ${SdFormatHelper.formatMoneyFromDouble(simpleInterest.principalAmount)}
+  💰 Principal Amount: ${SdCurrencyFormatHelper.formatCurrencyFromDouble(simpleInterest.principalAmount)}
   📈 Interest Rate: ${simpleInterest.rate}%
   ⏳ Time: ${simpleInterest.time} ${simpleInterest.timeUnit.name}
 
-  📦 Final Amount: ${SdFormatHelper.formatMoneyFromDouble(totalAmount)}
+  📦 Final Amount: ${SdCurrencyFormatHelper.formatCurrencyFromDouble(totalAmount)}
   📅 Calculation Date: ${DateFormat('dd/MM/yyyy').format(DateTime.now())}
   ''';
 

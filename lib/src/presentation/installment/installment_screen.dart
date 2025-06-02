@@ -58,7 +58,7 @@ class _InstallmentViewState extends State<_InstallmentView> {
         InstallmentModel(
           loanAmount:
               double.tryParse(
-                SdFormatHelper.getCleanAmountFromString(_amountTC.text),
+                SdCurrencyFormatHelper.cleanString(_amountTC.text),
               ) ??
               defaultInstallment.loanAmount,
           rate: double.tryParse(_rateTC.text) ?? defaultInstallment.rate,
@@ -181,7 +181,7 @@ class _InstallmentTable extends StatelessWidget {
 
   Widget _buildContentWidget(BuildContext context, double value) {
     return Text(
-      SdFormatHelper.formatMoneyFromDouble(value),
+      SdCurrencyFormatHelper.formatCurrencyFromDouble(value),
       style: SdTextStyle.body10().withColor(context.appTheme.textPrimary),
     );
   }
@@ -271,7 +271,7 @@ class _InstallmentInputArea extends StatelessWidget {
           title: 'Loan Amount',
           hintText: defaultInstallment.loanAmount.toInt().toString(),
           controller: amountTC,
-          inputFormatters: [SdFormatHelper.amountFormatter()],
+          inputFormatters: [SdCurrencyFormatHelper.amountFormatter()],
         ),
         const SdVerticalSpacing(),
         AppNumberTextField(
@@ -296,7 +296,7 @@ class _InstallmentInputArea extends StatelessWidget {
           title: 'Yearly Rate (%)',
           hintText: defaultInstallment.rate.toInt().toString(),
           controller: rateTC,
-          inputFormatters: [SdFormatHelper.amountFormatter()],
+          inputFormatters: [SdCurrencyFormatHelper.amountFormatter()],
         ),
         const SdVerticalSpacing(),
       ],

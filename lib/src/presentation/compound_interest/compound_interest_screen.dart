@@ -70,14 +70,12 @@ class _CompoundInterestViewState extends State<_CompoundInterestView> {
         CompoundInterestModel(
           principalAmount:
               double.tryParse(
-                SdFormatHelper.getCleanAmountFromString(_principalTC.text),
+                SdCurrencyFormatHelper.cleanString(_principalTC.text),
               ) ??
               defaultCompoundInterest.principalAmount,
           monthlyContribution:
               double.tryParse(
-                SdFormatHelper.getCleanAmountFromString(
-                  _monthlyContributionTC.text,
-                ),
+                SdCurrencyFormatHelper.cleanString(_monthlyContributionTC.text),
               ) ??
               defaultCompoundInterest.monthlyContribution,
           rate: double.tryParse(_rateTC.text) ?? defaultCompoundInterest.rate,
@@ -228,7 +226,7 @@ class _InputArea extends StatelessWidget {
           hintText: defaultCompoundInterest.principalAmount.toInt().toString(),
           title: 'Principal Amount',
           controller: principalTC,
-          inputFormatters: [SdFormatHelper.amountFormatter()],
+          inputFormatters: [SdCurrencyFormatHelper.amountFormatter()],
         ),
         const SdVerticalSpacing(),
         AppNumberTextField(
@@ -237,7 +235,7 @@ class _InputArea extends StatelessWidget {
               defaultCompoundInterest.monthlyContribution.toInt().toString(),
           title: 'Monthly Contribution',
           controller: monthlyContributionTC,
-          inputFormatters: [SdFormatHelper.amountFormatter()],
+          inputFormatters: [SdCurrencyFormatHelper.amountFormatter()],
         ),
         const SdVerticalSpacing(),
         AppNumberTextField(
@@ -262,7 +260,7 @@ class _InputArea extends StatelessWidget {
           title: 'Yearly Rate (%)',
           hintText: defaultCompoundInterest.rate.toInt().toString(),
           controller: rateTC,
-          inputFormatters: [SdFormatHelper.amountFormatter()],
+          inputFormatters: [SdCurrencyFormatHelper.amountFormatter()],
         ),
         const SdVerticalSpacing(),
         AppTextField(
