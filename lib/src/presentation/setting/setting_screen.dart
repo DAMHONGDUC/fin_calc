@@ -29,7 +29,7 @@ class SettingScreen extends StatelessWidget {
       backgroundColor: context.appTheme.bgPrimary,
       appBar: const MainAppBar(title: 'Settings', centerTitle: true),
       body: ListView.separated(
-        padding: EdgeInsets.all(SdSpacingConstants.spacing16),
+        padding: EdgeInsets.all(SdSpacing.s16),
         itemCount: LIST_SETTING.length,
         separatorBuilder: (_, __) => const SdVerticalSpacing(xRatio: 2),
         itemBuilder: (context, index) {

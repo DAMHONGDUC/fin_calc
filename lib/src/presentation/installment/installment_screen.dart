@@ -106,7 +106,7 @@ class _InstallmentViewState extends State<_InstallmentView> {
       ),
       backgroundColor: context.appTheme.bgPrimary,
       body: Padding(
-        padding: EdgeInsets.all(SdSpacingConstants.spacing16),
+        padding: EdgeInsets.all(SdSpacing.s16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,8 +189,8 @@ class _InstallmentTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final monthDeco = BoxConstraints(
-      minWidth: SdSpacingConstants.spacing6,
-      maxWidth: SdSpacingConstants.spacing20,
+      minWidth: SdSpacing.s6,
+      maxWidth: SdSpacing.s20,
     );
 
     return BlocBuilder<InstallmentController, InstallmentState>(
@@ -225,8 +225,8 @@ class _InstallmentTable extends StatelessWidget {
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: DataTable(
-            columnSpacing: SdSpacingConstants.spacing16,
-            horizontalMargin: SdSpacingConstants.spacing8,
+            columnSpacing: SdSpacing.s16,
+            horizontalMargin: SdSpacing.s8,
             columns: [
               DataColumn(
                 label: ConstrainedBox(

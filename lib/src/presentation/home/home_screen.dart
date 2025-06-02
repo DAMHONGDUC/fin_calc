@@ -36,10 +36,10 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: context.appTheme.bgPrimary,
       body: Container(
         padding: EdgeInsets.only(
-          left: SdSpacingConstants.spacing16,
-          right: SdSpacingConstants.spacing16,
-          top: SdSpacingConstants.spacing32,
-          bottom: SdSpacingConstants.spacing16,
+          left: SdSpacing.s16,
+          right: SdSpacing.s16,
+          top: SdSpacing.s32,
+          bottom: SdSpacing.s16,
         ),
         child: ListView.separated(
           clipBehavior: Clip.none,
@@ -72,7 +72,7 @@ class _OpenSettingButton extends StatelessWidget {
           () => NavigationManager.router.push(AppRouter.SETTING_ROOT.fullPaths),
       icon: SdIcon(
         iconData: Icons.settings,
-        iconSize: SdIconSize.size24,
+        iconSize: SdSpacing.s24,
         color: context.appTheme.iconPrimary,
       ),
     );

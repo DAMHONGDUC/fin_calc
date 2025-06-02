@@ -109,7 +109,7 @@ class _SimpleInterestViewState extends State<_SimpleInterestView> {
       ),
       backgroundColor: context.appTheme.bgPrimary,
       body: Padding(
-        padding: EdgeInsets.all(SdSpacingConstants.spacing16),
+        padding: EdgeInsets.all(SdSpacing.s16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

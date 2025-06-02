@@ -19,11 +19,11 @@ class FinanceResultCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.all(SdSpacingConstants.spacing16),
+          padding: EdgeInsets.all(SdSpacing.s16),
           width: double.infinity,
           decoration: BoxDecoration(
             color: context.appTheme.cardBgHighlight,
-            borderRadius: BorderRadius.circular(SdSpacingConstants.radius12),
+            borderRadius: BorderRadius.circular(SdSpacing.s12),
             boxShadow: [
               SdDecorationHelper.boxShadow(
                 ratio: 2,

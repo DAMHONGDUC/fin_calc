@@ -17,7 +17,7 @@ class OptionRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final radius = SdSpacingConstants.spacing20;
+    final radius = SdSpacing.s20;
 
     return Container(
       decoration: BoxDecoration(
@@ -33,7 +33,7 @@ class OptionRow extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          padding: EdgeInsets.all(SdSpacingConstants.spacing16),
+          padding: EdgeInsets.all(SdSpacing.s16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(radius)),
           ),
@@ -46,14 +46,14 @@ class OptionRow extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: context.appTheme.cardBgHighlight,
                       borderRadius: BorderRadius.all(
-                        Radius.circular(SdSpacingConstants.spacing14),
+                        Radius.circular(SdSpacing.s14),
                       ),
                     ),
-                    padding: EdgeInsets.all(SdSpacingConstants.spacing10),
+                    padding: EdgeInsets.all(SdSpacing.s10),
                     child: SdIcon(
                       iconData: iconData,
                       color: SdColors.white,
-                      iconSize: SdIconSize.size24,
+                      iconSize: SdSpacing.s24,
                     ),
                   ),
                   const SdHorizontalSpacing(),
@@ -80,7 +80,7 @@ class OptionRow extends StatelessWidget {
               ),
               SdIcon(
                 iconData: Icons.arrow_forward_ios,
-                iconSize: SdIconSize.size16,
+                iconSize: SdSpacing.s16,
                 color: context.appTheme.iconPrimary,
               ),
             ],

@@ -18,7 +18,7 @@ class SettingItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = SdSpacingConstants.spacing12;
+    final borderRadius = SdSpacing.s12;
 
     return Container(
       decoration: BoxDecoration(
@@ -30,7 +30,7 @@ class SettingItemView extends StatelessWidget {
           SdInkWell(
             borderRadius: borderRadius,
             onTap: onPress,
-            padding: EdgeInsets.all(SdSpacingConstants.spacing14),
+            padding: EdgeInsets.all(SdSpacing.s14),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

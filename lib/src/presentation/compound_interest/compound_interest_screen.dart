@@ -145,7 +145,7 @@ class _CompoundInterestViewState extends State<_CompoundInterestView> {
       backgroundColor: context.appTheme.bgPrimary,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(SdSpacingConstants.spacing16),
+          padding: EdgeInsets.all(SdSpacing.s16),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
