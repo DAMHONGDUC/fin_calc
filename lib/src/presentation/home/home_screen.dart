@@ -9,13 +9,13 @@ class HomeScreen extends StatelessWidget {
   void _navToFeature(LoanFeatureEnum feature) {
     switch (feature) {
       case LoanFeatureEnum.compoundInterest:
-        NavigationManager.router.push(AppRouter.COMPOUND_INTEREST.fullPaths);
+        NavigationManager.router.push(AppRouter.COMPOUND_INTEREST.fullPath);
         break;
       case LoanFeatureEnum.installment:
-        NavigationManager.router.push(AppRouter.INSTALLMENT.fullPaths);
+        NavigationManager.router.push(AppRouter.INSTALLMENT.fullPath);
         break;
       case LoanFeatureEnum.simpleInterest:
-        NavigationManager.router.push(AppRouter.SIMPLE_INTEREST.fullPaths);
+        NavigationManager.router.push(AppRouter.SIMPLE_INTEREST.fullPath);
         break;
     }
   }
@@ -69,7 +69,7 @@ class _OpenSettingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed:
-          () => NavigationManager.router.push(AppRouter.SETTING_ROOT.fullPaths),
+          () => NavigationManager.router.push(AppRouter.SETTING_ROOT.fullPath),
       icon: SdIcon(
         iconData: Icons.settings,
         iconSize: SdSpacing.s24,

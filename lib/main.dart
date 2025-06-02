@@ -13,12 +13,18 @@ void main() async {
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
   await initialisation();
 
+  const appTranslation = SdTranslation(
+    supportedLocales: [Locale('en'), Locale('vi')],
+    path: "lib/src/core/translations",
+    defaultLocale: Locale('en'),
+    languageCodes: ["en", "vi"],
+  );
+
   runApp(
     EasyLocalization(
-      path: AppTranslations.path,
-      supportedLocales: AppTranslations.supportedLocales,
-      startLocale: const Locale(AppTranslations.en),
-      fallbackLocale: const Locale(AppTranslations.en),
+      path: appTranslation.path,
+      supportedLocales: appTranslation.supportedLocales,
+      startLocale: appTranslation.defaultLocale,
       child: MainApp(savedThemeMode: savedThemeMode),
     ),
   );
@@ -30,7 +36,7 @@ Future<void> initialisation() async {
     configureDependencies();
 
     // bloc observer
-    Bloc.observer = AppBlocObserver();
+    Bloc.observer = SdBlocObserver();
 
     // easy location
     await EasyLocalization.ensureInitialized();

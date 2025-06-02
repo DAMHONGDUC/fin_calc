@@ -27,7 +27,7 @@ class NavigationManager {
     router = GoRouter(
       observers: [FlutterSmartDialog.observer],
       navigatorKey: rootNavigatorKey,
-      initialLocation: AppRouter.HOME_ROOT.fullPaths,
+      initialLocation: AppRouter.HOME_ROOT.fullPath,
       debugLogDiagnostics: true,
       routes: [HomeRoute.route, SettingRoute.route],
     );

@@ -1,48 +1,38 @@
-class CustomRouter {
-  CustomRouter({
-    required this.name,
-    required this.path,
-    required this.fullPaths,
-  });
-
-  final String path;
-  final String name;
-  final String fullPaths;
-}
+import 'package:system_design_flutter/index.dart';
 
 class AppRouter {
   // Home Route
-  static final CustomRouter HOME_ROOT = CustomRouter(
+  static final SdRouter HOME_ROOT = SdRouter(
     name: "home",
     path: "/home",
-    fullPaths: "/home",
+    fullPath: "/home",
   );
 
   // CompoundInterest
-  static final CustomRouter COMPOUND_INTEREST = CustomRouter(
+  static final SdRouter COMPOUND_INTEREST = SdRouter(
     name: "compound_interest",
     path: "/compound_interest",
-    fullPaths: "/home/compound_interest",
+    fullPath: "/home/compound_interest",
   );
 
   // SimpleInterest
-  static final CustomRouter SIMPLE_INTEREST = CustomRouter(
+  static final SdRouter SIMPLE_INTEREST = SdRouter(
     name: "simple_interest",
     path: "/simple_interest",
-    fullPaths: "/home/simple_interest",
+    fullPath: "/home/simple_interest",
   );
 
   // Installment
-  static final CustomRouter INSTALLMENT = CustomRouter(
+  static final SdRouter INSTALLMENT = SdRouter(
     name: "installment",
     path: "/installment",
-    fullPaths: "/home/installment",
+    fullPath: "/home/installment",
   );
 
   // Setting Route
-  static final CustomRouter SETTING_ROOT = CustomRouter(
+  static final SdRouter SETTING_ROOT = SdRouter(
     name: "setting",
     path: "/setting",
-    fullPaths: "/setting",
+    fullPath: "/setting",
   );
 }
